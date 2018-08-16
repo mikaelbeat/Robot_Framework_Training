@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180816 14:50:02.999" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
+<suite source="C:\Users\petri.ryynanen\eclipse-workspace\Robot_Framework_Training\Training\tests\amazon.robot" id="s1" name="Amazon">
+<test id="s1-t1" name="User must be signed in to checkout products">
+<kw name="Begin web test">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>gc</arg>
+</arguments>
+<msg timestamp="20180816 14:50:03.278" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20180816 14:50:08.867" starttime="20180816 14:50:03.278"></status>
+</kw>
+<status status="PASS" endtime="20180816 14:50:08.867" starttime="20180816 14:50:03.277"></status>
+</kw>
+<kw name="Search for products">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://www.amazon.com</arg>
+<arg>gc</arg>
+</arguments>
+<msg timestamp="20180816 14:50:08.869" level="INFO">Opening browser 'gc' to base url 'http://www.amazon.com'.</msg>
+<status status="PASS" endtime="20180816 14:50:18.745" starttime="20180816 14:50:08.868"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Your Amazon.com</arg>
+</arguments>
+<status status="PASS" endtime="20180816 14:50:18.947" starttime="20180816 14:50:18.745"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=twotabsearchtextbox</arg>
+<arg>Vinland Saga 1</arg>
+</arguments>
+<msg timestamp="20180816 14:50:18.948" level="INFO">Typing text 'Vinland Saga 1' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" endtime="20180816 14:50:19.464" starttime="20180816 14:50:18.948"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="nav-search"]/form/div[2]/div/input</arg>
+</arguments>
+<msg timestamp="20180816 14:50:19.465" level="INFO">Clicking button 'xpath=//*[@id="nav-search"]/form/div[2]/div/input'.</msg>
+<status status="PASS" endtime="20180816 14:50:23.416" starttime="20180816 14:50:19.464"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>results for "Vinland Saga 1"</arg>
+</arguments>
+<status status="PASS" endtime="20180816 14:50:23.764" starttime="20180816 14:50:23.416"></status>
+</kw>
+<status status="PASS" endtime="20180816 14:50:23.764" starttime="20180816 14:50:08.868"></status>
+</kw>
+<kw name="Select product from search results">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>css=#result_0 a.s-access-detail-page</arg>
+</arguments>
+<msg timestamp="20180816 14:50:23.777" level="INFO">Clicking link 'css=#result_0 a.s-access-detail-page'.</msg>
+<status status="PASS" endtime="20180816 14:50:28.854" starttime="20180816 14:50:23.776"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Back to search results</arg>
+</arguments>
+<status status="PASS" endtime="20180816 14:50:29.127" starttime="20180816 14:50:28.854"></status>
+</kw>
+<status status="PASS" endtime="20180816 14:50:29.128" starttime="20180816 14:50:23.776"></status>
+</kw>
+<kw name="Add product to cart">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>id=add-to-cart-button</arg>
+</arguments>
+<msg timestamp="20180816 14:50:29.139" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
+<status status="PASS" endtime="20180816 14:50:30.841" starttime="20180816 14:50:29.138"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Added to Cart</arg>
+</arguments>
+<status status="PASS" endtime="20180816 14:50:31.068" starttime="20180816 14:50:30.841"></status>
+</kw>
+<status status="PASS" endtime="20180816 14:50:31.069" starttime="20180816 14:50:29.136"></status>
+</kw>
+<kw name="Begin checkout">
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>id=hlb-ptc-btn-native</arg>
+</arguments>
+<msg timestamp="20180816 14:50:31.071" level="INFO">Clicking link 'id=hlb-ptc-btn-native'.</msg>
+<status status="PASS" endtime="20180816 14:50:32.109" starttime="20180816 14:50:31.070"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Sign in</arg>
+</arguments>
+<msg timestamp="20180816 14:50:32.162" level="INFO">Current page contains text 'Sign in'.</msg>
+<status status="PASS" endtime="20180816 14:50:32.163" starttime="20180816 14:50:32.109"></status>
+</kw>
+<status status="PASS" endtime="20180816 14:50:32.163" starttime="20180816 14:50:31.070"></status>
+</kw>
+<kw name="End web test">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180816 14:50:35.499" starttime="20180816 14:50:32.167"></status>
+</kw>
+<status status="PASS" endtime="20180816 14:50:35.499" starttime="20180816 14:50:32.167"></status>
+</kw>
+<doc>This is some basic info about the test</doc>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20180816 14:50:35.500" critical="yes" starttime="20180816 14:50:03.275"></status>
+</test>
+<doc>This is my training project</doc>
+<status status="PASS" endtime="20180816 14:50:35.502" starttime="20180816 14:50:03.005"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Smoke</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Amazon" pass="1">Amazon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
