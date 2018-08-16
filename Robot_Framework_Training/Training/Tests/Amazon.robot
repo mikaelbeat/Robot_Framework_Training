@@ -10,7 +10,7 @@ Test Teardown    End web test
 *** Variables ***
 ${BROWSER} =  gc
 ${URL} =  http://www.amazon.com
-${SEARCH_TERM} =  Vinland Saga 1
+${SEARCH_TERM} =  Vinland Saga 1    
 
 *** Test Cases ***
 User must be signed in to checkout products  
