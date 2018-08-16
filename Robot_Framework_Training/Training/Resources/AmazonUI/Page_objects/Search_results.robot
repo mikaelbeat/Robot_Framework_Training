@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 *** Keywords ***
 
 Verify that product has found
-    Wait Until Page Contains    results for "Vinland Saga 1"
+    Wait Until Page Contains    results for "${SEARCH_TERM}"
     
 Select product from search results
      Click Link    css=#result_0 a.s-access-detail-page

@@ -8,7 +8,9 @@ Test Teardown    End web test
 # robot -d results tests/amazon.robot
 
 *** Variables ***
-
+${BROWSER} =  gc
+${URL} =  http://www.amazon.com
+${SEARCH_TERM} =  Vinland Saga 1
 
 *** Test Cases ***
 User must be signed in to checkout products  

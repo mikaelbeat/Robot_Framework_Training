@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 
 *** Keywords ***
 Begin web test
-    Open Browser    about:blank    gc
+    Open Browser    about:blank    ${BROWSER}
      
 End web test
     Close Browser  
