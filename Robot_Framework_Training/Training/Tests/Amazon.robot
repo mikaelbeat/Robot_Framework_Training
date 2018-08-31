@@ -20,4 +20,4 @@ User must be signed in to checkout products
      AmazonUI.Search and select product
      AmazonUI.Add product to cart
      AmazonUI.Click checkout
-     AmazonUI.Verify sign in page
+     AmazonUI.Verify sign in page    
