@@ -1,11 +1,11 @@
+# Robot -d Results Tests/Amazon.robot
+
 *** Settings ***
 Documentation    This is my training project 
 Resource    ../Resources/AmazonUI/AmazonUI.robot
 Resource    ../Resources/Common.robot
 Test Setup    Begin web test
 Test Teardown    End web test
-
-# robot -d results tests/amazon.robot
 
 *** Variables ***
 ${BROWSER} =  gc

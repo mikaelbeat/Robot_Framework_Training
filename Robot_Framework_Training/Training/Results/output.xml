@@ -1,172 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180817 14:38:59.853" generator="Robot 3.0.4 (Python 2.7.14 on win32)">
-<suite source="C:\Users\petri.ryynanen\git\Robot_Framework_Training\Robot_Framework_Training\Training\tests\amazon.robot" id="s1" name="Amazon">
-<test id="s1-t1" name="User must be signed in to checkout products">
-<kw type="setup" name="Begin web test" library="Common">
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20181030 12:41:34.635">
+<suite id="s1" name="Demo" source="C:\Users\XRYYNPE\VisualStudio_Workspace\Robot_Framework_Training\Robot_Framework_Training\Training\Tests\Demo.robot">
+<test id="s1-t1" name="User must sign in to check out product">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>about:blank</arg>
-<arg>${BROWSER}</arg>
+<arg>gc</arg>
 </arguments>
-<msg timestamp="20180817 14:39:00.162" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
-<status status="PASS" endtime="20180817 14:39:06.298" starttime="20180817 14:39:00.162"></status>
+<msg timestamp="20181030 12:41:34.887" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20181030 12:41:34.887" endtime="20181030 12:41:37.611"></status>
 </kw>
-<status status="PASS" endtime="20180817 14:39:06.298" starttime="20180817 14:39:00.161"></status>
-</kw>
-<kw name="Open webpage" library="AmazonUI">
-<kw name="Load" library="Landing_page">
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the active browser instance to the provided ``url``.</doc>
 <arguments>
-<arg>${URL}</arg>
+<arg>${url}</arg>
 </arguments>
-<msg timestamp="20180817 14:39:06.300" level="INFO">Opening url 'http://www.amazon.com'</msg>
-<status status="PASS" endtime="20180817 14:39:10.918" starttime="20180817 14:39:06.300"></status>
+<msg timestamp="20181030 12:41:37.612" level="INFO">Opening url '= http://www.amazon.com'</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20181030 12:41:37.982" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20181030 12:41:37.616" endtime="20181030 12:41:37.982"></status>
 </kw>
-<status status="PASS" endtime="20180817 14:39:10.919" starttime="20180817 14:39:06.299"></status>
+<msg timestamp="20181030 12:41:37.985" level="FAIL">WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot navigate to invalid URL"}
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 6.1.7601 SP1 x86_64)
+</msg>
+<status status="FAIL" starttime="20181030 12:41:37.611" endtime="20181030 12:41:37.985"></status>
 </kw>
-<kw name="Verify page" library="Landing_page">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>Your Amazon.com</arg>
-</arguments>
-<status status="PASS" endtime="20180817 14:39:11.232" starttime="20180817 14:39:10.921"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:11.232" starttime="20180817 14:39:10.919"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:11.233" starttime="20180817 14:39:06.299"></status>
-</kw>
-<kw name="Search and select product" library="AmazonUI">
-<kw name="Enter product to search field" library="Landing_page">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${SEARCHBOX}</arg>
-<arg>${SEARCH_TERM}</arg>
-</arguments>
-<msg timestamp="20180817 14:39:11.236" level="INFO">Typing text 'Vinland Saga 1' into text field 'id=twotabsearchtextbox'.</msg>
-<status status="PASS" endtime="20180817 14:39:11.671" starttime="20180817 14:39:11.236"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:11.671" starttime="20180817 14:39:11.236"></status>
-</kw>
-<kw name="Click search button" library="Landing_page">
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>${SEARCH_BUTTON}</arg>
-</arguments>
-<msg timestamp="20180817 14:39:11.672" level="INFO">Clicking button 'xpath=//*[@id="nav-search"]/form/div[2]/div/input'.</msg>
-<status status="PASS" endtime="20180817 14:39:14.801" starttime="20180817 14:39:11.672"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:14.802" starttime="20180817 14:39:11.671"></status>
-</kw>
-<kw name="Verify that product has found" library="Search_results">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>${RESULTS} "${SEARCH_TERM}"</arg>
-</arguments>
-<status status="PASS" endtime="20180817 14:39:15.114" starttime="20180817 14:39:14.803"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:15.115" starttime="20180817 14:39:14.802"></status>
-</kw>
-<kw name="Select product from search results" library="Search_results">
-<kw name="Click Link" library="SeleniumLibrary">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>${PRODUCT_LINK}</arg>
-</arguments>
-<msg timestamp="20180817 14:39:15.117" level="INFO">Clicking link 'css=#result_0 a.s-access-detail-page'.</msg>
-<status status="PASS" endtime="20180817 14:39:20.133" starttime="20180817 14:39:15.116"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>${BACK_LINK}</arg>
-</arguments>
-<status status="PASS" endtime="20180817 14:39:20.284" starttime="20180817 14:39:20.134"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:20.284" starttime="20180817 14:39:15.115"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:20.285" starttime="20180817 14:39:11.236"></status>
-</kw>
-<kw name="Add product to cart" library="AmazonUI">
-<kw name="Move product to cart" library="Product">
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks button identified by ``locator``.</doc>
-<arguments>
-<arg>${ADD_TO_CART_BUTTON}</arg>
-</arguments>
-<msg timestamp="20180817 14:39:20.290" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
-<status status="PASS" endtime="20180817 14:39:21.967" starttime="20180817 14:39:20.289"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
-<arguments>
-<arg>${ADDED_TO_CART_CONFIRMATION}</arg>
-</arguments>
-<status status="PASS" endtime="20180817 14:39:22.129" starttime="20180817 14:39:21.968"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:22.130" starttime="20180817 14:39:20.288"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:22.130" starttime="20180817 14:39:20.286"></status>
-</kw>
-<kw name="Click checkout" library="AmazonUI">
-<kw name="Click proceed to checkout" library="Product">
-<kw name="Click Link" library="SeleniumLibrary">
-<doc>Clicks a link identified by ``locator``.</doc>
-<arguments>
-<arg>${PROCEED_TO_CHECKOUT_BUTTON}</arg>
-</arguments>
-<msg timestamp="20180817 14:39:22.132" level="INFO">Clicking link 'id=hlb-ptc-btn-native'.</msg>
-<status status="PASS" endtime="20180817 14:39:23.211" starttime="20180817 14:39:22.131"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:23.211" starttime="20180817 14:39:22.131"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:23.211" starttime="20180817 14:39:22.130"></status>
-</kw>
-<kw name="Verify sign in page" library="AmazonUI">
-<kw name="Verify Page Loaded" library="Sign_in">
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<doc>Verifies that current page contains ``text``.</doc>
-<arguments>
-<arg>${SIGN_IN_TEXT}</arg>
-</arguments>
-<msg timestamp="20180817 14:39:23.285" level="INFO">Current page contains text 'Sign in'.</msg>
-<status status="PASS" endtime="20180817 14:39:23.286" starttime="20180817 14:39:23.213"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:23.286" starttime="20180817 14:39:23.212"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:23.287" starttime="20180817 14:39:23.212"></status>
-</kw>
-<kw type="teardown" name="End web test" library="Common">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180817 14:39:26.648" starttime="20180817 14:39:23.289"></status>
-</kw>
-<status status="PASS" endtime="20180817 14:39:26.649" starttime="20180817 14:39:23.288"></status>
-</kw>
-<doc>This is some basic info about the test</doc>
-<tags>
-<tag>Smoke</tag>
-</tags>
-<status status="PASS" endtime="20180817 14:39:26.652" critical="yes" starttime="20180817 14:39:00.160"></status>
+<status status="FAIL" starttime="20181030 12:41:34.887" endtime="20181030 12:41:37.986" critical="yes">WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot navigate to invalid URL"}
+  (Session info: chrome=69.0.3497.100)
+  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 6.1.7601 SP1 x86_64)
+</status>
 </test>
-<doc>This is my training project</doc>
-<status status="PASS" endtime="20180817 14:39:26.654" starttime="20180817 14:38:59.862"></status>
+<status status="FAIL" starttime="20181030 12:41:34.635" endtime="20181030 12:41:37.988"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
 </total>
 <tag>
-<stat fail="0" pass="1">Smoke</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Amazon" pass="1">Amazon</stat>
+<stat pass="0" fail="1" id="s1" name="Demo">Demo</stat>
 </suite>
 </statistics>
 <errors>
