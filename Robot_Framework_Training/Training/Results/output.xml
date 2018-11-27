@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20181101 13:07:33.403">
-<suite id="s1" name="REST Demo" source="C:\Users\XRYYNPE\github\Robot_Framework_Training\Robot_Framework_Training\Training\Tests\REST_Demo.robot">
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20181127 14:23:36.143">
+<suite id="s1" name="REST Demo" source="C:\Users\petri.ryynanen\github\Robot_Framework_Training\Robot_Framework_Training\Training\Tests\REST_Demo.robot">
 <test id="s1-t1" name="Get test">
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
@@ -9,8 +9,8 @@
 <arg>${url}</arg>
 <arg>verify=true</arg>
 </arguments>
-<msg timestamp="20181101 13:07:33.578" level="INFO">Creating Session using : alias=getSession, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=true,                     debug=0 </msg>
-<status status="PASS" starttime="20181101 13:07:33.578" endtime="20181101 13:07:33.578"></status>
+<msg timestamp="20181127 14:23:36.336" level="INFO">Creating Session using : alias=getSession, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=true,                     debug=0 </msg>
+<status status="PASS" starttime="20181127 14:23:36.335" endtime="20181127 14:23:36.336"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -21,36 +21,36 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20181101 13:08:09.264" level="INFO">Get Request using : alias=getSession, uri=/api/users?page=2, headers=None json=None</msg>
-<msg timestamp="20181101 13:08:09.267" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20181101 13:07:33.578" endtime="20181101 13:08:09.267"></status>
+<msg timestamp="20181127 14:23:37.061" level="INFO">Get Request using : alias=getSession, uri=/api/users?page=2, headers=None json=None</msg>
+<msg timestamp="20181127 14:23:37.061" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20181127 14:23:36.337" endtime="20181127 14:23:37.061"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
 </arguments>
-<msg timestamp="20181101 13:08:09.272" level="INFO">200</msg>
-<status status="PASS" starttime="20181101 13:08:09.269" endtime="20181101 13:08:09.272"></status>
+<msg timestamp="20181127 14:23:37.066" level="INFO">200</msg>
+<status status="PASS" starttime="20181127 14:23:37.065" endtime="20181127 14:23:37.066"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.text}</arg>
 </arguments>
-<msg timestamp="20181101 13:08:09.279" level="INFO">{"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</msg>
-<status status="PASS" starttime="20181101 13:08:09.277" endtime="20181101 13:08:09.279"></status>
+<msg timestamp="20181127 14:23:37.068" level="INFO">{"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</msg>
+<status status="PASS" starttime="20181127 14:23:37.067" endtime="20181127 14:23:37.068"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
-<arg>200</arg>
+<arg>${expected_response}</arg>
 </arguments>
-<msg timestamp="20181101 13:08:09.284" level="INFO">Argument types are:
+<msg timestamp="20181127 14:23:37.070" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20181101 13:08:09.282" endtime="20181101 13:08:09.284"></status>
+<status status="PASS" starttime="20181127 14:23:37.069" endtime="20181127 14:23:37.070"></status>
 </kw>
 <kw name="To Json" library="RequestsLibrary">
 <doc>Convert a string to a JSON object</doc>
@@ -61,23 +61,23 @@
 <assign>
 <var>${pretty_printed_response}</var>
 </assign>
-<msg timestamp="20181101 13:08:09.289" level="INFO">To JSON using : content={"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]} </msg>
-<msg timestamp="20181101 13:08:09.292" level="INFO">To JSON using : pretty_print=true </msg>
-<msg timestamp="20181101 13:08:09.292" level="INFO">${pretty_printed_response} = {
+<msg timestamp="20181127 14:23:37.073" level="INFO">To JSON using : content={"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]} </msg>
+<msg timestamp="20181127 14:23:37.073" level="INFO">To JSON using : pretty_print=true </msg>
+<msg timestamp="20181127 14:23:37.073" level="INFO">${pretty_printed_response} = {
     "data": [
         {
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
             "first_name": "Eve",
             "id": 4,
             "last_name": "H...</msg>
-<status status="PASS" starttime="20181101 13:08:09.287" endtime="20181101 13:08:09.292"></status>
+<status status="PASS" starttime="20181127 14:23:37.071" endtime="20181127 14:23:37.073"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${pretty_printed_response}</arg>
 </arguments>
-<msg timestamp="20181101 13:08:09.297" level="INFO">{
+<msg timestamp="20181127 14:23:37.076" level="INFO">{
     "data": [
         {
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
@@ -103,11 +103,11 @@
     "total": 12,
     "total_pages": 4
 }</msg>
-<status status="PASS" starttime="20181101 13:08:09.294" endtime="20181101 13:08:09.297"></status>
+<status status="PASS" starttime="20181127 14:23:37.075" endtime="20181127 14:23:37.076"></status>
 </kw>
-<status status="PASS" starttime="20181101 13:07:33.575" endtime="20181101 13:08:09.299" critical="yes"></status>
+<status status="PASS" starttime="20181127 14:23:36.334" endtime="20181127 14:23:37.077" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20181101 13:07:33.405" endtime="20181101 13:08:09.319"></status>
+<status status="PASS" starttime="20181127 14:23:36.151" endtime="20181127 14:23:37.080"></status>
 </suite>
 <statistics>
 <total>

@@ -18,5 +18,4 @@ Get test
   ${pretty_printed_response}    To Json    ${response.text}    true
   log   ${pretty_printed_response}
 
-
 *** Keywords ***
