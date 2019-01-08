@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20190108 13:49:01.012">
+<suite id="s1" name="Selenium Demo" source="C:\Users\petri.ryynanen\git\Robot_Framework_Training\Robot_Framework_Training\Training\Tests\Selenium_Demo.robot">
+<test id="s1-t1" name="User must sign in to check out product">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20190108 13:49:01.187" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20190108 13:49:01.187" endtime="20190108 13:49:03.671"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20190108 13:49:03.672" level="INFO">Opening url 'http://www.amazon.com'</msg>
+<status status="PASS" starttime="20190108 13:49:03.672" endtime="20190108 13:49:05.276"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${header}</arg>
+</arguments>
+<status status="PASS" starttime="20190108 13:49:05.277" endtime="20190108 13:49:05.329"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>${search_term}</arg>
+</arguments>
+<msg timestamp="20190108 13:49:05.329" level="INFO">Typing text 'Vinland Saga 1' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20190108 13:49:05.329" endtime="20190108 13:49:05.507"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${search_button}</arg>
+</arguments>
+<msg timestamp="20190108 13:49:05.507" level="INFO">Clicking button 'xpath=//*[@id="nav-search"]/form/div[2]/div/input'.</msg>
+<status status="PASS" starttime="20190108 13:49:05.507" endtime="20190108 13:49:07.138"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${search_result}</arg>
+</arguments>
+<status status="PASS" starttime="20190108 13:49:07.138" endtime="20190108 13:49:07.160"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${product_link}</arg>
+</arguments>
+<msg timestamp="20190108 13:49:07.161" level="INFO">Clicking link 'css=#result_0 a.s-access-detail-page'.</msg>
+<status status="PASS" starttime="20190108 13:49:07.161" endtime="20190108 13:49:11.170"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${product_page}</arg>
+</arguments>
+<status status="PASS" starttime="20190108 13:49:11.171" endtime="20190108 13:49:11.211"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${add_to_cart_button}</arg>
+</arguments>
+<msg timestamp="20190108 13:49:11.212" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
+<status status="PASS" starttime="20190108 13:49:11.212" endtime="20190108 13:49:12.648"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${added_to_cart_confirmation}</arg>
+</arguments>
+<status status="PASS" starttime="20190108 13:49:12.648" endtime="20190108 13:49:12.672"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${proceed_to_checkout_button}</arg>
+</arguments>
+<msg timestamp="20190108 13:49:12.673" level="INFO">Clicking link 'id=hlb-ptc-btn-native'.</msg>
+<status status="PASS" starttime="20190108 13:49:12.673" endtime="20190108 13:49:14.071"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${sign_in_form_header}</arg>
+</arguments>
+<msg timestamp="20190108 13:49:14.098" level="INFO">Current page contains text 'Sign in'.</msg>
+<status status="PASS" starttime="20190108 13:49:14.071" endtime="20190108 13:49:14.098"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20190108 13:49:14.098" endtime="20190108 13:49:16.314"></status>
+</kw>
+<status status="PASS" starttime="20190108 13:49:01.186" endtime="20190108 13:49:16.315" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20190108 13:49:01.015" endtime="20190108 13:49:16.322"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Selenium Demo">Selenium Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
