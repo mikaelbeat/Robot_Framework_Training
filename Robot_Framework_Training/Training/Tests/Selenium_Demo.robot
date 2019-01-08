@@ -1,11 +1,14 @@
-# Robot -d Results Tests/Demo.robot
+# Robot -d Results/Selenium_Demo Selenium_Demo.robot
+
+# For running all tests in one foldel
+# Robot -d Results Tests
 
 *** Settings ***
 Library  SeleniumLibrary
 
 *** Variables ***
-${browser}  gc
-${url}  http://www.amazon.com
+#${browser}  gc
+#${url}  http://www.amazon.com
 ${header}  Your Amazon.com
 ${search_field}  id=twotabsearchtextbox
 ${search_term}  Vinland Saga 1
@@ -20,7 +23,12 @@ ${sign_in_form_header}  Sign in
 
 *** Test Cases ***
 User must sign in to check out product
-    Open Browser  about:blank  ${browser}
+  Begin Web Test  http://www.amazon.com   gc
+
+*** Keywords ***
+Begin Web Test
+    [Arquments] ${url}  ${browser}
+    Open Browser    about:blank  ${browser}
     Go To  ${url}
     Wait Until Page Contains  ${header}
     Input Text  ${search_field}  ${search_term}
