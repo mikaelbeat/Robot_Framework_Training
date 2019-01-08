@@ -1,28 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20190108 14:36:12.667">
+<robot generator="Robot 3.0.4 (Python 3.7.0 on win32)" generated="20190108 15:09:11.960">
 <suite id="s1" name="Selenium Demo" source="C:\Users\petri.ryynanen\github\Robot_Framework_Training\Robot_Framework_Training\Training\Tests\Selenium_Demo.robot">
 <test id="s1-t1" name="User must sign in to check out product">
-<kw name="Begin Web Test">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>http://www.amazon.com</arg>
-<arg>gc</arg>
+<arg>${selenium_speed}</arg>
 </arguments>
-<msg timestamp="20190108 14:36:12.860" level="FAIL">Keyword 'Begin Web Test' expected 0 arguments, got 2.</msg>
-<status status="FAIL" starttime="20190108 14:36:12.860" endtime="20190108 14:36:12.860"></status>
+<status status="PASS" starttime="20190108 15:09:12.159" endtime="20190108 15:09:12.159"></status>
 </kw>
-<status status="FAIL" starttime="20190108 14:36:12.859" endtime="20190108 14:36:12.861" critical="yes">Keyword 'Begin Web Test' expected 0 arguments, got 2.</status>
+<kw name="Begin Web Test">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20190108 15:09:12.160" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20190108 15:09:12.160" endtime="20190108 15:09:15.630"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20190108 15:09:15.631" level="INFO">Opening url 'http://www.amazon.com'</msg>
+<status status="PASS" starttime="20190108 15:09:15.630" endtime="20190108 15:09:18.519"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${header}</arg>
+</arguments>
+<status status="PASS" starttime="20190108 15:09:18.519" endtime="20190108 15:09:19.694"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${search_field}</arg>
+<arg>${search_term}</arg>
+</arguments>
+<msg timestamp="20190108 15:09:19.694" level="INFO">Typing text 'Vinland Saga 1' into text field 'id=twotabsearchtextbox'.</msg>
+<status status="PASS" starttime="20190108 15:09:19.694" endtime="20190108 15:09:22.876"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${search_button}</arg>
+</arguments>
+<msg timestamp="20190108 15:09:22.877" level="INFO">Clicking button 'xpath=//*[@id="nav-search"]/form/div[2]/div/input'.</msg>
+<status status="PASS" starttime="20190108 15:09:22.876" endtime="20190108 15:09:27.677"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${search_result}</arg>
+</arguments>
+<status status="PASS" starttime="20190108 15:09:27.678" endtime="20190108 15:09:28.734"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${product_link}</arg>
+</arguments>
+<msg timestamp="20190108 15:09:28.735" level="INFO">Clicking link 'css=#result_0 a.s-access-detail-page'.</msg>
+<status status="PASS" starttime="20190108 15:09:28.734" endtime="20190108 15:09:35.530"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${product_page}</arg>
+</arguments>
+<status status="PASS" starttime="20190108 15:09:35.530" endtime="20190108 15:09:36.579"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${add_to_cart_button}</arg>
+</arguments>
+<msg timestamp="20190108 15:09:36.579" level="INFO">Clicking button 'id=add-to-cart-button'.</msg>
+<status status="PASS" starttime="20190108 15:09:36.579" endtime="20190108 15:09:40.798"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>${added_to_cart_confirmation}</arg>
+</arguments>
+<status status="PASS" starttime="20190108 15:09:40.798" endtime="20190108 15:09:41.827"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>${proceed_to_checkout_button}</arg>
+</arguments>
+<msg timestamp="20190108 15:09:41.827" level="INFO">Clicking link 'id=hlb-ptc-btn-native'.</msg>
+<status status="PASS" starttime="20190108 15:09:41.827" endtime="20190108 15:09:46.511"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${sign_in_form_header}</arg>
+</arguments>
+<msg timestamp="20190108 15:09:48.537" level="INFO">Current page contains text 'Sign in'.</msg>
+<status status="PASS" starttime="20190108 15:09:46.512" endtime="20190108 15:09:48.537"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20190108 15:09:48.538" endtime="20190108 15:09:51.636"></status>
+</kw>
+<status status="PASS" starttime="20190108 15:09:12.160" endtime="20190108 15:09:51.637"></status>
+</kw>
+<status status="PASS" starttime="20190108 15:09:12.158" endtime="20190108 15:09:51.638" critical="yes"></status>
 </test>
-<status status="FAIL" starttime="20190108 14:36:12.671" endtime="20190108 14:36:12.863"></status>
+<status status="PASS" starttime="20190108 15:09:11.965" endtime="20190108 15:09:51.642"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="Selenium Demo">Selenium Demo</stat>
+<stat pass="1" fail="0" id="s1" name="Selenium Demo">Selenium Demo</stat>
 </suite>
 </statistics>
 <errors>

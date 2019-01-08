@@ -7,8 +7,10 @@
 Library  SeleniumLibrary
 
 *** Variables ***
-#${browser}  gc
-#${url}  http://www.amazon.com
+${selenium_speed}  1 seconds
+${implicit_wait}  20 seconds
+${browser}  gc
+${url}  http://www.amazon.com
 ${header}  Your Amazon.com
 ${search_field}  id=twotabsearchtextbox
 ${search_term}  Vinland Saga 1
@@ -23,11 +25,13 @@ ${sign_in_form_header}  Sign in
 
 *** Test Cases ***
 User must sign in to check out product
-  Begin Web Test  http://www.amazon.com   gc
+  Set Selenium Speed    ${selenium_speed}
+  Set Selenium Implicit Wait    ${implicit_wait}
+  Begin Web Test
+
 
 *** Keywords ***
 Begin Web Test
-    [Arquments] ${url}  ${browser}
     Open Browser    about:blank  ${browser}
     Go To  ${url}
     Wait Until Page Contains  ${header}
